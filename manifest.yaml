@@ -1,6 +1,6 @@
 manifestVersion: 1
 name: "@mgreten/frigate-footage-export"
-version: "2026.07.19.1"
+version: "2026.07.19.2"
 description: >
   Generic, dry-run-first Frigate event metadata, recording inspection, and
   server-side footage export model with explicit naming and multi-camera support.

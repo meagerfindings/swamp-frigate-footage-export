@@ -250,7 +250,7 @@ export function toEvent(value: unknown): Event {
 /** Model definition for bounded Frigate event and footage-export operations. */
 export const model = {
   type: "@mgreten/frigate-footage-export",
-  version: "2026.07.19.1",
+  version: "2026.07.19.2",
   globalArguments: GlobalArgsSchema,
   resources: {
     eventQuery: {
@@ -336,7 +336,7 @@ export const model = {
         };
         const handle = await context.writeResource(
           "eventQuery",
-          "latest",
+          "result",
           result,
         );
         context.logger.info("Found {count} Frigate events", {
@@ -376,7 +376,7 @@ export const model = {
         const segments = Array.isArray(raw) ? raw : [];
         const handle = await context.writeResource(
           "recordingWindow",
-          "latest",
+          "result",
           {
             inspectedAt: new Date().toISOString(),
             ...args,
@@ -412,7 +412,7 @@ export const model = {
         });
         const handle = await context.writeResource(
           "exportPlan",
-          "latest",
+          "result",
           plan,
         );
         return { dataHandles: [handle] };
@@ -506,7 +506,7 @@ export const model = {
         };
         const handle = await context.writeResource(
           "exportResult",
-          "latest",
+          "result",
           result,
         );
         context.logger.info(
